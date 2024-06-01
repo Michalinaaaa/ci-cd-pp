@@ -1,39 +1,55 @@
-name: Python application
+"""
+This module contains utility functions for basic arithmetic operations.
+"""
 
-on:
-  push:
-  pull_request:
+def add(a: int, b: int) -> int:
+    """
+    Function to add two numbers.
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+    Parameters:
+        a (int): The first number.
+        b (int): The second number.
 
-    strategy:
-      matrix:
-        python-version: ["3.11", "3.12"]
+    Returns:
+        int: The sum of a and b.
+    """
+    return a + b
 
-    steps:
-      - uses: actions/checkout@v3
+def subtract(a: int, b: int) -> int:
+    """
+    Function to subtract two numbers.
 
-      - name: Set up Python
-        uses: actions/setup-python@v3
+    Parameters:
+        a (int): The first number.
+        b (int): The second number.
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install pytest 
-          pip install pylint   
-          pip install black
-          pip install -r requirements.txt
+    Returns:
+        int: The result of subtracting b from a.
+    """
+    return a - b
 
-      - name: Test with Pytest
-        run: |
-          pytest
+def multiply(a: int, b: int) -> int:
+    """
+    Function to multiply two numbers.
 
-      - name: Lint with Pylint
-        run: |
-          pylint ./utils.py
+    Parameters:
+        a (int): The first number.
+        b (int): The second number.
 
-      - name: Format with Black
-        run: |
-          black --check .
+    Returns:
+        int: The product of a and b.
+    """
+    return a * b
+
+def divide(a: int, b: int) -> float:
+    """
+    Function to divide two numbers.
+
+    Parameters:
+        a (int): The numerator.
+        b (int): The denominator.
+
+    Returns:
+        float: The result of dividing a by b.
+    """
+    return a / b
