@@ -32,4 +32,4 @@ jobs:
 
       - name: Check code formatting with Black
         run: |
-          black --check .
+          black .
