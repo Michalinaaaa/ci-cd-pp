@@ -1,3 +1,7 @@
+"""
+Utility functions for basic arithmetic operations.
+"""
+
 def add(a: int, b: int) -> int:
     """
     Function to add two numbers.
